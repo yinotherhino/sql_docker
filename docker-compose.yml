@@ -7,3 +7,21 @@ services:
     build: .
     ports:
       -3008:3000
+    depends_on:
+      - db
+    volumes:
+      - .:/usr/src/app
+
+  db:
+    container_name: postgres
+    image: postgres
+    ports:
+      - 5433:5432
+    volumes:
+      - data:/data/db
+    environment:
+      - POSTGRES_DB=bankapp
+      - POSTGRES_PASSWORD=12345
+
+volumes:
+  data: {}

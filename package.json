@@ -5,8 +5,9 @@
   "scripts": {
     "start": "node ./bin/www",
     "compile": "tsc -w",
-    "build": "tsc",
-    "dev": "nodemon ./bin/www"
+    "build": "rm -rf dist && tsc",
+    "dev": "nodemon -L -e ts --exec \"yarn build && yarn start\"",
+    "migrate": "node-pg-migrate"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
