@@ -6,7 +6,7 @@ services:
     restart: always
     build: .
     ports:
-      -3008:3000
+      - 3008:3000
     depends_on:
       - db
     volumes:
@@ -20,8 +20,8 @@ services:
     volumes:
       - data:/data/db
     environment:
-      - POSTGRES_DB=bankapp
-      - POSTGRES_PASSWORD=12345
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
 
 volumes:
   data: {}
