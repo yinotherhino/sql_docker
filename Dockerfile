@@ -1,17 +1,15 @@
-FROM node:16
+FROM node:16.13.1-alpine3.14
 
 WORKDIR /usr/src/app
 
 COPY ["package.json", "yarn.lock", "bin", ".env", "tsconfig.json", "./"]
 
-COPY yarn.lock .
+COPY . .
 
 RUN yarn
-
-COPY . .
 
 RUN npx tsc
 
 EXPOSE 3000
 
-CMD ["yarn", "dev"]
+CMD yarn dev

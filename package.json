@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "compile": "tsc -w",
-    "build": "rm -rf dist && tsc",
+    "build": "rm -rf dist && npx tsc",
     "dev": "nodemon -L -e ts --exec \"yarn build && yarn start\"",
     "migrate": "node-pg-migrate"
   },
@@ -23,7 +23,9 @@
     "@types/express": "^4.17.14",
     "@types/http-errors": "^2.0.1",
     "@types/morgan": "^1.9.3",
+    "node-pg-migrate": "^6.2.2",
     "nodemon": "^2.0.20",
+    "pg": "^8.8.0",
     "typescript": "^4.9.3"
   }
 }

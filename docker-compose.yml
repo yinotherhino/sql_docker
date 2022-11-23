@@ -1,4 +1,4 @@
-version: '2'
+version: '3.8'
 
 services:
   api:
@@ -20,8 +20,9 @@ services:
     volumes:
       - data:/data/db
     environment:
-      - POSTGRES_DB=${DB_NAME}
-      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=db_name
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=12345
 
 volumes:
   data: {}
